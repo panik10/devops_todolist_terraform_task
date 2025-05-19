@@ -15,6 +15,7 @@ mkdir /app
 # make sure to uncomment the line bellow and update the link with your GitHub username
 git clone https://github.com/panik10/devops_todolist_terraform_task.git
 cp -r devops_todolist_terraform_task/app/* /app
+chmod +x /app/start.sh
 
 # create a service for the app via systemctl and start the app
 mv /app/todoapp.service /etc/systemd/system/
