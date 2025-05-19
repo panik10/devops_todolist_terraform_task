@@ -7,7 +7,7 @@ variable "resource_group_name" {
 }
 
 variable "vm_name" {
-    default = "matebox"
+  default = "matebox"
 }
 
 variable "subnet_id" {
