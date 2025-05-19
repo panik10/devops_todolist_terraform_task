@@ -25,3 +25,15 @@ variable "environment" {
 variable "vm_image" {
   default = "Ubuntu2204"
 }
+
+variable "ssh_key_public" {
+  default = "~/.ssh/1744645180.pub"
+}
+
+variable "dns_label" {
+  default = "matetask"
+}
+
+variable "public_ip_address_id" {
+  default = "1"
+}

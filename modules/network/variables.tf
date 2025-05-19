@@ -18,8 +18,16 @@ variable "vnet_name" {
   default = "vnet"
 }
 
+variable "vnet_address_prefix" {
+  default = "10.0.0.0/16"
+}
+
 variable "subnet_name" {
   default = "default"
+}
+
+variable "subnet_address_prefix" {
+  default = "10.0.0.0/24"
 }
 
 variable "nsg_name" {
@@ -31,5 +39,9 @@ variable "pip_name" {
 }
 
 variable "pip_label_prefix" {
+  default = "matetask"
+}
+
+variable "dns_label" {
   default = "matetask"
 }

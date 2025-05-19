@@ -2,11 +2,13 @@ resource "azurerm_network_interface" "vm" {
   name                = "${var.vm_name}-nic"
   location            = var.location
   resource_group_name = var.resource_group_name
+  internal_dns_name_label = var.dns_label
 
   ip_configuration {
     name                          = "default"
-    subnet_id                     = module.network.subnet.id
+    subnet_id                     = var.subnet_id
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id          = var.public_ip_address_id
   }
 }
 
@@ -22,7 +24,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   admin_ssh_key {
     username   = "er"
-    public_key = file("~/.ssh/id_ed25519.pub")
+    public_key = file(var.ssh_key_public)
   }
 
   os_disk {
