@@ -1,7 +1,7 @@
 resource "azurerm_network_interface" "vm" {
-  name                    = "${var.vm_name}-nic"
-  location                = var.location
-  resource_group_name     = var.resource_group_name
+  name                = "${var.vm_name}-nic"
+  location            = var.location
+  resource_group_name = var.resource_group_name
   internal_dns_name_label = var.dns_label
 
   ip_configuration {
@@ -13,11 +13,11 @@ resource "azurerm_network_interface" "vm" {
 }
 
 resource "azurerm_linux_virtual_machine" "vm" {
-  name                = var.vm_name
-  location            = var.location
-  resource_group_name = var.resource_group_name
-  size                = var.vm_size
-  admin_username      = "er"
+  name                  = var.vm_name
+  location              = var.location
+  resource_group_name   = var.resource_group_name
+  size                  = var.vm_size
+  admin_username        = "er"
 
 
   network_interface_ids = [azurerm_network_interface.vm.id]
